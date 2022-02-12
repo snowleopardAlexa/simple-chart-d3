@@ -5,4 +5,5 @@ d3.select('div')
   // tell me which paragraphs are missing
   .enter()
   // add missing paragraphs to missing div
-  .append('p');
+  .append('p')
+  .text(dta => dta);
