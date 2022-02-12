@@ -5,8 +5,14 @@ const DUMMY_DATA = [
     { id: 'd4', value: 40, region: 'Switzerland'},
 ];
 
-// scaling functions x, y axis 
-const xScale = d3.scaleBand().rangeRound([0, 250]).padding(0.1);
+// scaling functions x axis
+const xScale = d3
+.scaleBand()
+.domain(DUMMY_DATA.map((dataPoint) => dataPoint.region))
+.rangeRound([0, 250])
+.padding(0.1);
+
+// scaling function y axis
 const yScale = d3.scaleLinear().domain([0, 15]).range([200, 0]);
 
 const container = d3.select('svg')
@@ -21,6 +27,8 @@ const container = d3.select('svg')
      .append('rect')
      .classed('bar', true)
      .attr('width', xScale.bandwidth())
-     .attr('height', data => yScale(data.value));
-
+     .attr('height', data => yScale(data.value))
+     .attr('x', data => xScale(data.region))
+     .atrr('y', data => yScale(data.value));
+      
      
