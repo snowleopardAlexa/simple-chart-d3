@@ -1,8 +1,8 @@
 const DUMMY_DATA = [
     { id: 'd1', value: 10, region: 'USA'},
-    { id: 'd2', value: 20, region: 'India'},
-    { id: 'd3', value: 30, region: 'China'},
-    { id: 'd4', value: 40, region: 'Switzerland'},
+    { id: 'd2', value: 11, region: 'India'},
+    { id: 'd3', value: 12, region: 'China'},
+    { id: 'd4', value: 6, region: 'Switzerland'},
 ];
 
 // scaling functions x axis
@@ -27,7 +27,7 @@ const container = d3.select('svg')
      .append('rect')
      .classed('bar', true)
      .attr('width', xScale.bandwidth())
-     .attr('height', data => yScale(data.value))
+     .attr('height', (data) => 200 - yScale(data.value))
      .attr('x', data => xScale(data.region))
      .atrr('y', data => yScale(data.value));
       
