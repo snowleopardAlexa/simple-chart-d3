@@ -12,9 +12,11 @@ const container = d3.select('div')
 
   const bars = container
      .selectAll('.bar')
+     // bind our data
      .data(DUMMY_DATA)
      .enter()
+     // append for evey missing element
      .append('div')
      .classed('bar', true)
      .style('width', '50px')
-     .style('height', '150px');
+     .style('height', data => (data.value * 15) + 'px');
