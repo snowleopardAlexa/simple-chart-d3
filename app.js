@@ -15,8 +15,7 @@ const xScale = d3
 // scaling function y axis
 const yScale = d3.scaleLinear().domain([0, 15]).range([200, 0]);
 
-const container = d3.select('svg')
-  .classed('container', true)
+const container = d3.select('svg').classed('container', true);
 
   const bars = container
      .selectAll('.bar')
@@ -31,4 +30,8 @@ const container = d3.select('svg')
      .attr('x', data => xScale(data.region))
      .atrr('y', data => yScale(data.value));
       
+
+  setTimeout(() => {
+     bars.data(DUMMY_DATA.slice(0, 2)).exit().remove();
+  }, 2000);
      
