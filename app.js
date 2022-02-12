@@ -6,7 +6,7 @@ const DUMMY_DATA = [
 ];
 
 
-const container = d3.select('div')
+const container = d3.select('svg')
   .classed('container', true)
   .style('border', '2px solid green');
 
@@ -16,7 +16,7 @@ const container = d3.select('div')
      .data(DUMMY_DATA)
      .enter()
      // append for evey missing element
-     .append('div')
+     .append('rect')
      .classed('bar', true)
-     .style('width', '50px')
-     .style('height', data => (data.value * 15) + 'px');
+     .attr('width', 50)
+     .attr('height', data => (data.value * 10));
