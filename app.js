@@ -8,7 +8,6 @@ const DUMMY_DATA = [
 
 const container = d3.select('svg')
   .classed('container', true)
-  .style('border', '2px solid green');
 
   const bars = container
      .selectAll('.bar')
