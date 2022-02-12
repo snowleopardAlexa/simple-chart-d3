@@ -28,7 +28,7 @@ const container = d3.select('svg').classed('container', true);
      .attr('width', xScale.bandwidth())
      .attr('height', (data) => 200 - yScale(data.value))
      .attr('x', data => xScale(data.region))
-     .atrr('y', data => yScale(data.value));
+     .attr('y', data => yScale(data.value));
       
 
   setTimeout(() => {
